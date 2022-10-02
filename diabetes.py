@@ -1,13 +1,16 @@
-from flask import Flask
 import urllib.request
 import json
 import os
 import ssl
 import streamlit as st
 
+from flask import Flask
 app = Flask(__name__)
-@app.route("/")
 
+
+@app.route("/")
+def home():
+    return "Hello, this is a sample Python Web App running on Flask Framework!"
 
 #------------------------------------(3) APPLICATION MAIN INTERFACE/////// 
 st.write("""
@@ -83,5 +86,3 @@ if st.sidebar.button('Estimate the Possibility of Diabetes'):
         st.write(error.info())
         st.write(error.read().decode("utf8", 'ignore'))
         
-if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=8080, debug=True)
