@@ -1,8 +1,12 @@
+from flask import Flask
 import urllib.request
 import json
 import os
 import ssl
 import streamlit as st
+
+app = Flask(__name__)
+@app.route("/")
 
 
 #------------------------------------(3) APPLICATION MAIN INTERFACE/////// 
@@ -78,3 +82,6 @@ if st.sidebar.button('Estimate the Possibility of Diabetes'):
     # st.write the headers - they include the requert ID and the timestamp, which are useful for debugging the failure
         st.write(error.info())
         st.write(error.read().decode("utf8", 'ignore'))
+        
+if __name__ == '__main__':
+    app.run(host='127.0.0.1', port=8080, debug=True)
