@@ -4,14 +4,6 @@ import os
 import ssl
 import streamlit as st
 
-from flask import Flask
-app = Flask(__name__)
-
-
-@app.route("/")
-def home():
-    return "Hello, this is a sample Python Web App running on Flask Framework!"
-
 #------------------------------------(3) APPLICATION MAIN INTERFACE/////// 
 st.write("""
 # MSDE4 : Diabetes prediction  
