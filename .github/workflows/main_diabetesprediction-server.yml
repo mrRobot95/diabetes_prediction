@@ -30,6 +30,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
         
+      - name: build_test
+        run: run app.py
+        
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
       
       - name: Upload artifact for deployment jobs
@@ -39,7 +42,9 @@ jobs:
           path: |
             . 
             !venv/
-
+      - name: build_test
+        run: run app.py
+        
   deploy:
     runs-on: ubuntu-latest
     needs: build
